@@ -1,0 +1,24 @@
+module Hubspot
+  
+  # Finds and updates leads
+  #
+  # Finds:
+  # Lead.find :all, :params => { :search => 'test' }
+  # Lead.find <GUID>  
+  #
+  # Updates:
+  # lead.firstName = 'Reinier'; lead.save!
+  # lead.update_attributes(:firstName => 'Reinier')
+  class Lead < Hubspot::Base
+    self.site = 'https://api.hubapi.com/leads/v1'
+    
+    schema do
+      string 'guid', 'salutation', 'firstName', 'lastName', 'email', 'website', 'company'
+      string 'address', 'state', 'city', 'zip', 'country'
+      string 'phone', 'fax', 'userToken', 'industry', 'jobTitle', 'twitterHandle', 'ipAddress'
+      float  'score'
+    end
+  
+  end
+  
+end
