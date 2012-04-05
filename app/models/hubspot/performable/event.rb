@@ -6,6 +6,7 @@ module Hubspot
   
     # The Event class can be used to record events using the Performable API.
     # Example: Hubspot::Event.new('event_32145').record!
+    # The response will always be a 1X1 transparent GIF, this is because the HTTP API can be used via an HTML image tag as well :)
     class Event < Struct.new(:event_id, :performed_at, :completed_at, :url, :ip, :value, :order_id, :custom_parameters)
       include ActiveModel::Validations
     

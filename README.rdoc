@@ -1,3 +1,149 @@
 = Hubspot
 
-This gem is not finished yet!
+This gem is a Rails Engine for communicating with several Hubspot API's. Furthermore, it provides some helpers
+to easily integrate Hubspot in your website. This gem only uses standard ActiveResource and Net/HTTP and has been
+tested with unit tests and VCR for replaying HTTP requests.
+
+== Requirements
+
+  Rails 3
+
+== Installation
+
+Add hubspot to your Gemfile:
+
+  gem 'hubspot'
+
+== Configuration
+
+This gem is a Rails Engine. The gem can be configured by changing the default engine configuration. The following settings
+can be added to your application.rb or an initializer:
+
+* Hubspot.config.hubspot_site         = 'demo.app11.hubspot.com'
+The domain of your Hubspot site, which is used in the javascript tracker code
+
+* Hubspot.config.hubspot_access_token = 'demooooo-oooo-oooo-oooo-oooooooooooo'
+The access token for authenticating to several Hubspot services
+
+* Hubspot.config.hubspot_key          = 'demo'
+Your API key
+
+* Hubspot.config.hubspot_portal_id    = '62515'
+Your Portal ID
+
+* Hubspot.config.debug_http_output    = false
+Enables/disables logging of HTTP requests and response. False disables debugging, setting it to STDOUT enables logging to STDOUT. Of course you can specify any IO object you want.
+
+== Usage
+
+Currently, the gem supports the following Hubspot API's:
+
+* Leads
+
+See: http://developers.hubspot.com/docs/endpoints#leads-api
+
+** Finds
+
+  Hubspot::Lead.find :all, :params => { :search => 'test' }
+  Hubspot::Lead.find <GUID>  
+
+** Updates
+
+  lead.firstName = 'Reinier'; lead.save!
+  lead.update_attributes(:firstName => 'Reinier')
+
+* Blogs (including posts and comments)
+
+See: http://developers.hubspot.com/docs/endpoints#blog-api
+
+** Finds
+  Hubspot::Blog.find :all, :params => { :max => 10 }
+  Hubspot::Blog.find <GUID>  
+  
+** Posts
+  Hubspot::Blog.find('guid').posts
+  
+*** Post comments
+  Hubspot::Blogs::Post.find("6ca6fdc5-a81f-44db-a63b-f56ab2636c69", :params => { :blog_guid => "0d61e4ca-e395-4c1c-8766-afaa48bf68db" }).comments
+
+** Comments
+  Hubspot::Blog.find('guid').comments  
+
+* Keywords
+
+See: http://developers.hubspot.com/docs/endpoints#keywords-api
+
+** Finds
+
+  Hubspot::Keyword.find(:all, :params => { :max => 5 })
+  Hubspot::Keyword.find('guid')
+  
+** Creates
+
+  Hubspot::Keyword.create!({ :keyword => { :keyword => 'key' }})  
+  Hubspot::Keyword.create({ :keyword => { :keyword => 'key' }})  
+  
+* Events
+
+See: http://developers.hubspot.com/docs/endpoints#events-api
+
+** Finds
+
+  Hubspot::Event.find(:all, :params => { :max => 5 })
+  
+** Creates
+
+  Hubspot::Event.create!(:eventType => 'new event', :description => 'test')
+  Hubspot::Event.create(:eventType => 'new event', :description => 'test')  
+  
+* Performable events
+
+See: http://performabledoc.hubspot.com/display/DOC/HTTP+API
+
+** Records
+
+  event = Hubspot::Performable::Event.new('event-12345', Date.civil(2012), nil, 'http://example.com')
+  event.custom_parameters = { :email => 'test@example.com' }  
+  event.save!
+
+Please take a look at the unit tests for examples!
+
+== Action controller extensions
+
+For now, there is only a convenience method for getting the current user token:
+
+  hubspot_user_token # Retrieves the user token from the Hubspot 'hubspotutk' cookie (if any)
+
+== HubspotHelper
+
+The HubspotHelper can be used to insert the Hubspot javascript tracker code to your website. First include the helper:
+
+  class ApplicationController < ActionController::Base
+    helper HubspotHelper
+  end
+  
+Then, you can add the javascript tracker code easily by calling the helper:
+
+  <body>
+    ...
+    <%= hubspot_javascript_tracker %>
+  </body>
+  
+== Acknowledgements
+
+* Thanks go to Josh Lane from which I took some of the code of his Hubspot API implementation (https://github.com/lanej/hubspot-api)
+  
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2012 Reinier de Lange. See LICENSE for details.  
+  
