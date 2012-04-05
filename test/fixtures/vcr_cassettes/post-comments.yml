@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:41:21 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '{"authorDisplayName":"testapi@hubspot.com","authorEmail":"testapi@hubspot.com","blogGuid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","body":"<b>This
+        is the content of the blog post<\/b>","createTimestamp":1333483438000,"draft":true,"guid":"6ca6fdc5-a81f-44db-a63b-f56ab2636c69","jsonUrl":"https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69.json","lastUpdateTimestamp":1333483438000,"metaDescription":"test
+        metaDescription!","metaKeywords":"these are totally test keywords.","portalId":62515,"postAnalytics":null,"publishTimestamp":1333483438000,"sendNotifications":true,"summary":"This
+        is a test summary","tags":["tag2","tag1"],"title":"I am a test post","url":"http://demo.hubapi.com/blog-for-testing/bid/103902/"}'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:41:21 GMT
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69/comments.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=2&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:41:22 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '[]'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:41:23 GMT
+recorded_with: VCR 2.0.1

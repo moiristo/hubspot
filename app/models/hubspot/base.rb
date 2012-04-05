@@ -2,13 +2,12 @@ require "active_resource"
 
 module Hubspot
 
-  class Base < ActiveResource::Base    
+  class Base < ActiveResource::Base
     self.format = ActiveResource::Formats::JsonFormat
-    self.include_root_in_json = false  
-    
+
     # Only serialize the attributes listed in the schema
     def to_json(options={})
-      super(options.reverse_merge(:only => schema.keys))
+      super(options.reverse_merge(:root => nil, :only => schema.keys))
     end     
     
     class << self

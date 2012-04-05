@@ -18,6 +18,8 @@ module Hubspot
       string 'phone', 'fax', 'userToken', 'industry', 'jobTitle', 'twitterHandle', 'ipAddress'
       float  'score'
     end
+    
+    alias_attribute :id, :guid
   
   end
   

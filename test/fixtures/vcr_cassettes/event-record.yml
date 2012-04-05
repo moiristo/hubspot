@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://analytics.performable.com/v1/event?_a=demo&_l=http://example.com&_n=event-12345&_t=2012-01-01&email=test@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        aW1hZ2UvZ2lm
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAwNCBBcHIgMjAxMiAyMzo1NzozMyBHTVQ=
+      !binary "TGFzdC1Nb2RpZmllZA==":
+      - !binary |-
+        TW9uLCAyOCBTZXAgMTk3MCAwNjowMDowMCBHTVQ=
+      !binary "UDNw":
+      - !binary |-
+        Q1A9Ik5PSSBDVVIgQURNIE9VUiBOT1IgU1RBIE5JRCI=
+      !binary "U2VydmVy":
+      - !binary |-
+        bmdpbngvMS4wLjQ=
+      !binary "Q29udGVudC1MZW5ndGg=":
+      - !binary |-
+        NDM=
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:57:33 GMT
+recorded_with: VCR 2.0.1

@@ -25,7 +25,7 @@ module Hubspot
     # 
     # value - A monetary value associated with this event, such as the purchase amount or expected conversion value. This value should be a number with no formatting other than a period representing the decimal point (if necessary.)
     # order_id - A unique identifier associated with the order or transaction. This is used to make sure this transaction is not counted more than once.    
-    PARAMETER_MAPPING = { 'event_id' => '_n', 'performed_at' => '_t', 'completed_at' => '_d', 'url' => '_l', 'ip' => '_ip', 'value' => 'value', 'order_id' => 'order_id'}
+    PARAMETER_MAPPING = { :event_id => '_n', :performed_at => '_t', :completed_at => '_d', :url => '_l', :ip => '_ip', :value => 'value', :order_id => 'order_id'}
 
     def record!
       return false unless valid?
@@ -49,13 +49,13 @@ module Hubspot
     
     # Converts the event to encoded form data.
     def to_param
-      parameters = members.inject({}) do |hash, parameter| 
+      parameters = PARAMETER_MAPPING.keys.inject({}) do |hash, parameter| 
         parameter_value = send(parameter)
         hash[PARAMETER_MAPPING[parameter]] = parameter_value if parameter_value.present?
         hash
       end
-      
-      parameters.merge!(custom_properties) if custom_parameters
+
+      parameters.merge!(custom_parameters) if custom_parameters
       parameters.merge!('_a' => Hubspot.config.hubspot_key)        
       parameters.to_param      
     end

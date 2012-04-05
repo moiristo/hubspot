@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/list.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=5&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:23:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '[{"blogTitle":"Test Blog (content from customers.hubspot.com)","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=584130&tabId=300291","guid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","jsonUrl":"https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/blog-for-testing"},{"blogTitle":"Industry
+        News from around the web","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=597636&tabId=304641","guid":"0ee9c214-3b05-45e2-b757-7a9b58103f5e","jsonUrl":"https://api.hubapi.com/blog/v1/0ee9c214-3b05-45e2-b757-7a9b58103f5e.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/industry-news"},{"blogTitle":"Our
+        Bl212og","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=558743&tabId=167755","guid":"4f1c84dc-d303-4905-854c-6b923c0b55cd","jsonUrl":"https://api.hubapi.com/blog/v1/4f1c84dc-d303-4905-854c-6b923c0b55cd.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/"},{"blogTitle":"Our
+        Blog","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=499184&tabId=265430","guid":"98a74673-d4d6-4319-b741-dd071566c1e1","jsonUrl":"https://api.hubapi.com/blog/v1/98a74673-d4d6-4319-b741-dd071566c1e1.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/blog-api-post-deploy-test"},{"blogTitle":"test","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=587336&tabId=301523","guid":"ddb865bf-a1a8-4528-b931-f8aa605db0c4","jsonUrl":"https://api.hubapi.com/blog/v1/ddb865bf-a1a8-4528-b931-f8aa605db0c4.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/blog"}]'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:23:37 GMT
+recorded_with: VCR 2.0.1

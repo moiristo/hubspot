@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:33:01 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '{"blogTitle":"Test Blog (content from customers.hubspot.com)","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=584130&tabId=300291","guid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","jsonUrl":"https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/blog-for-testing"}'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:33:01 GMT
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db/comments.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=2&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:33:04 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '[{"anonyEmail":"testapi@hubspot.com","anonyName":"Test Comment Author","anonyUrl":"http://hubspot.com","approvedTimestamp":null,"blogGuid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","blogUrl":"demo.hubapi.com/blog-for-testing","comment":"I
+        am a test comment","createTimestamp":1333483437000,"guid":"b29e7b88-9baf-4bde-bad5-32945c62fc86","jsonUrl":"https://api.hubapi.com/blog/v1/comments/b29e7b88-9baf-4bde-bad5-32945c62fc86.json","judgeIsSpam":null,"judgeScoredTimestamp":null,"notifiedModeratorsTimestamp":null,"notifiedNonModeratorsTimestamp":null,"notify":false,"portalId":62515,"postGuid":"6a0626c6-98f1-4b7c-a3c0-0b5a1daabf2b","postTitle":"I
+        am a test post title UPDATED","postUrl":"http://demo.hubapi.com/blog-for-testing/bid/78906/","referrer":"","userAgent":"","userEmail":"","userToken":""},{"anonyEmail":"hapihp@hs.com","anonyName":"hapihp
+        comment Author","anonyUrl":"http://hubspot.com","approvedTimestamp":null,"blogGuid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","blogUrl":"demo.hubapi.com/blog-for-testing","comment":"hapihp
+        test comment created a new one now","createTimestamp":1332176117000,"guid":"c03f54f8-b251-443a-96d3-f08601713a15","jsonUrl":"https://api.hubapi.com/blog/v1/comments/c03f54f8-b251-443a-96d3-f08601713a15.json","judgeIsSpam":false,"judgeScoredTimestamp":null,"notifiedModeratorsTimestamp":null,"notifiedNonModeratorsTimestamp":null,"notify":false,"portalId":62515,"postGuid":"ae15391a-7bd9-454d-b51b-5c480a010497","postTitle":"new
+        improves Updated title","postUrl":"http://demo.hubapi.com/blog-for-testing/bid/80149/","referrer":"","userAgent":"","userEmail":"hapihp@hs.com","userToken":""}]'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:33:04 GMT
+recorded_with: VCR 2.0.1

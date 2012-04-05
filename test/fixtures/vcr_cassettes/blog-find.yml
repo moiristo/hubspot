@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Apr 2012 23:34:34 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '{"blogTitle":"Test Blog (content from customers.hubspot.com)","feedUrl":"demo.hubapi.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleId=584130&tabId=300291","guid":"0d61e4ca-e395-4c1c-8766-afaa48bf68db","jsonUrl":"https://api.hubapi.com/blog/v1/0d61e4ca-e395-4c1c-8766-afaa48bf68db.json","moderated":false,"moderators":[],"portalId":62515,"webUrl":"demo.hubapi.com/blog-for-testing"}'
+    http_version: 
+  recorded_at: Wed, 04 Apr 2012 23:34:34 GMT
+recorded_with: VCR 2.0.1
