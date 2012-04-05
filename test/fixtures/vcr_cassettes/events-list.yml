@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/events/v1/events?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=5&portalId=62515
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 05 Apr 2012 07:46:59 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache-Coyote/1.1
+    body:
+      encoding: US-ASCII
+      string: ! '[{"createDate":1333085425000,"description":"Atom Updated Atom-Powered
+        Robots Run Amok","eventType":"iReach Distribution","portalId":62515,"url":"","createdBy":"api"},{"createDate":1333009289000,"description":"asdf","eventType":"iReach
+        Distribution","portalId":62515,"url":"","createdBy":"api"},{"createDate":1332914725000,"description":"asdf","eventType":"iReach
+        Distribution","portalId":62515,"url":"","createdBy":"api"},{"createDate":1332914324000,"description":"asdf","eventType":"iReach
+        Distribution","portalId":62515,"url":"","createdBy":"api"},{"createDate":1332837364000,"description":"k;","eventType":"iReach
+        Distribution","portalId":62515,"url":"","createdBy":"api"}]'
+    http_version: 
+  recorded_at: Thu, 05 Apr 2012 07:47:00 GMT
+recorded_with: VCR 2.0.1

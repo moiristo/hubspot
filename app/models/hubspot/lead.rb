@@ -3,8 +3,8 @@ module Hubspot
   # Finds and updates leads
   #
   # Finds:
-  # Lead.find :all, :params => { :search => 'test' }
-  # Lead.find <GUID>  
+  # Hubspot::Lead.find :all, :params => { :search => 'test' }
+  # Hubspot::Lead.find <GUID>  
   #
   # Updates:
   # lead.firstName = 'Reinier'; lead.save!

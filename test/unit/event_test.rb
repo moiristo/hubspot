@@ -1,22 +1,21 @@
 require File.expand_path('../../test_helper.rb', __FILE__)
 
 class EventTest < ActiveSupport::TestCase
-  setup do
-    @event = Hubspot::Event.new('event-12345', Date.civil(2012), nil, 'http://example.com')
-  end
-  
-  def test_should_create_query_string
-    assert_equal "_a=demo&_l=http%3A%2F%2Fexample.com&_n=event-12345&_t=2012-01-01", @event.to_param
-    
-    @event.custom_parameters = { :email => 'test@example.com' }
-    assert_equal "_a=demo&_l=http%3A%2F%2Fexample.com&_n=event-12345&_t=2012-01-01&email=test%40example.com", @event.to_param
+
+  def test_should_return_events
+    VCR.use_cassette('events-list') do
+      events = Hubspot::Event.find(:all, :params => { :max => 5 })
+      assert_equal 5, events.size
+            
+      event = events.first
+      assert_equal ["Atom Updated Atom-Powered Robots Run Amok", "iReach Distribution", "", 1333085425000], Hubspot::Event.known_attributes.map{|attribute| event.send(attribute)}
+    end  
   end  
   
-  def test_should_record_events
-    VCR.use_cassette('event-record') do
-      @event.custom_parameters = { :email => 'test@example.com' }  
-      assert_equal 200, @event.record
-    end    
+  def test_should_create_events
+    VCR.use_cassette('event-create') do
+      assert_equal 201, Hubspot::Event.create(:eventType => 'new event', :description => 'test', :url => 'http://dev.hubspot.com', :createDate => '1323272544000')
+    end     
   end
 
 end
