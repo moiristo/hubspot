@@ -1,11 +1,15 @@
 require "active_resource"
 
+# Hubspot::Base initializes ActiveResource to use JSON and to use our own Connection class that adds authentication
+# information to each request. Moreover, as Hubspot's API paths are very inconsistent, it provides the most common
+# paths to object collections and members. This can be overridden if necessary
 module Hubspot
 
   class Base < ActiveResource::Base
     self.format = ActiveResource::Formats::JsonFormat
 
-    # Only serialize the attributes listed in the schema
+    # Only serialize the attributes listed in the schema. Leads can contain much more information than can be passed
+    # back to Hubspot, therefore we need to ensure they are not serialized on save.
     def to_json(options={})
       super(options.reverse_merge(:root => nil, :only => schema.keys))
     end     

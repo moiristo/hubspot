@@ -2,13 +2,24 @@ module Hubspot
   
   class Engine < Rails::Engine
     
+    # The domain of your Hubspot site, which is used in the javascript tracker code
     config.hubspot_site         = 'demo.app11.hubspot.com'
-    config.hubspot_access_token = 'demooooo-oooo-oooo-oooo-oooooooooooo'
-    config.hubspot_key          = 'demo'
-    config.hubspot_portal_id    = '62515'
-    config.debug_http_output    = STDOUT
     
-    ActiveSupport.on_load(:action_controller) do      
+    # The access token for authenticating to several Hubspot services
+    config.hubspot_access_token = 'demooooo-oooo-oooo-oooo-oooooooooooo'
+    
+    # Your API key
+    config.hubspot_key          = 'demo'
+    
+    # Your Portal ID
+    config.hubspot_portal_id    = '62515'
+    
+    # Enables/disables logging of HTTP requests and response.
+    # false - Disables debugging
+    # STDOUT - logs to STDOUT. Of course you can specify any IO object you want.
+    config.debug_http_output    = false # STDOUT
+    
+    ActiveSupport.on_load(:action_controller) do
       include Hubspot::ActionControllerExtensions
     end
     

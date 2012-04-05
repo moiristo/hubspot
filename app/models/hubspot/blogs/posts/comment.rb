@@ -2,7 +2,7 @@ module Hubspot
   module Blogs
     module Posts
     
-      # Define an assocation base class from which blog child associations should inherit    
+      # This type of Comment will be instantiated when finding comments that belong to Posts
       class Comment < Hubspot::Base
         self.site = 'https://api.hubapi.com/blog/v1/posts/:post_guid'
       

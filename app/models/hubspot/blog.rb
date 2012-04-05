@@ -1,5 +1,10 @@
 module Hubspot
   
+  # Finds blogs
+  #
+  # Finds:
+  # Hubspot::Blog.find :all, :params => { :max => 10 }
+  # Hubspot::Blog.find <GUID>  
   class Blog < Hubspot::Base
     self.site = 'https://api.hubapi.com/blog/v1'
     
@@ -8,6 +13,8 @@ module Hubspot
     end
     
     alias_attribute :id, :guid
+    
+    # Convenience methods for retrieving a blog's posts and comments
     
     def comments(params = {})
       Hubspot::Blogs::Comment.find :all, :params => params.merge(:blog_guid => guid)

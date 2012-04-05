@@ -1,5 +1,6 @@
 module HubspotHelper
   
+  # Should be included at the bottom of any HTML page (before </body>) you want to track
   def hubspot_javascript_tracker
     raw <<-EOS
       <!-- Start of HubSpot Logging Code -->
