@@ -16,7 +16,7 @@ module Hubspot
     
     class << self
       def create attributes
-        create!(attributes) #rescue false
+        create!(attributes) rescue false
       end
             
       def create! attributes
