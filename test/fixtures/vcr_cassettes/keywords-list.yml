@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/keywords/v1/keywords?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=5&portalId=62515
+    uri: https://api.hubapi.com/keywords/v1/keywords?hapikey=demo&max=5&portalId=62515
     body:
       encoding: US-ASCII
       string: ''

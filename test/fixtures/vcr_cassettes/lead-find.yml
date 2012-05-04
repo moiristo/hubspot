@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/leads/v1/lead/8a41f2f22906b93a012906b9438f0008.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&portalId=62515
+    uri: https://api.hubapi.com/leads/v1/lead/8a41f2f22906b93a012906b9438f0008.json?hapikey=demo&portalId=62515
     body:
       encoding: US-ASCII
       string: ''

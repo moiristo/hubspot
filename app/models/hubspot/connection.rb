@@ -4,7 +4,18 @@ module Hubspot
     
     # Set default parameters to send along with each request
     def self.default_parameters
-      @default_parameters ||= { 'access_token' => Hubspot.config.hubspot_access_token, 'portalId' => Hubspot.config.hubspot_portal_id }
+      @default_parameters ||= begin
+        default_parameter_hash = {}
+        default_parameter_hash['portalId'] = Hubspot.config.hubspot_portal_id
+        
+        if Hubspot.config.hubspot_access_token.present?
+          default_parameter_hash['access_token'] = Hubspot.config.hubspot_access_token
+        else
+          default_parameter_hash['hapikey'] = Hubspot.config.hubspot_key
+        end
+        
+        default_parameter_hash
+      end
     end
     
     # Override to support debug output

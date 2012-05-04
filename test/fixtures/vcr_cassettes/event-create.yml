@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.hubapi.com/events/v1/events?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&createDate=1323272544000&description=test&eventType=new%20event&portalId=62515&url=http://dev.hubspot.com
+    uri: https://api.hubapi.com/events/v1/events?createDate=1323272544000&description=test&eventType=new%20event&hapikey=demo&portalId=62515&url=http://dev.hubspot.com
     body:
       encoding: US-ASCII
       string: ''

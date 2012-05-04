@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&portalId=62515
+    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69.json?hapikey=demo&portalId=62515
     body:
       encoding: US-ASCII
       string: ''
@@ -38,7 +38,7 @@ http_interactions:
   recorded_at: Wed, 04 Apr 2012 23:41:21 GMT
 - request:
     method: get
-    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69/comments.json?access_token=demooooo-oooo-oooo-oooo-oooooooooooo&max=2&portalId=62515
+    uri: https://api.hubapi.com/blog/v1/posts/6ca6fdc5-a81f-44db-a63b-f56ab2636c69/comments.json?hapikey=demo&max=2&portalId=62515
     body:
       encoding: US-ASCII
       string: ''

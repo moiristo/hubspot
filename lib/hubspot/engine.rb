@@ -5,8 +5,8 @@ module Hubspot
     # The domain of your Hubspot site, which is used in the javascript tracker code
     config.hubspot_site         = 'demo.app11.hubspot.com'
     
-    # The access token for authenticating to several Hubspot services
-    config.hubspot_access_token = 'demooooo-oooo-oooo-oooo-oooooooooooo'
+    # The access token for authenticating to several Hubspot services, e.g. 'demooooo-oooo-oooo-oooo-oooooooooooo'
+    config.hubspot_access_token = nil
     
     # Your API key
     config.hubspot_key          = 'demo'
