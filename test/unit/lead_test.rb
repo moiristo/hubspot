@@ -19,6 +19,12 @@ class LeadTest < ActiveSupport::TestCase
     end    
   end
   
+  # def test_should_create_lead
+  #   VCR.use_cassette('lead-create') do
+  #     assert Hubspot::Lead.create(:FormName => 'demorequest', :UserToken => '2d6a7ac882f84764876cd998b26f12e1', :IPAddress => '127.0.0.1', :FirstName => 'Adrian', :LastName => 'Mott', :Email => 'adrian@example.com')
+  #   end    
+  # end
+  
   def test_should_update_lead
     VCR.use_cassette('lead-update') do
       lead = Hubspot::Lead.find("8a41f2f22906b93a012906b9438f0008")

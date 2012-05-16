@@ -3,7 +3,7 @@ module Hubspot
   class Engine < Rails::Engine
     
     # The domain of your Hubspot site, which is used in the javascript tracker code
-    config.hubspot_site         = 'demo.app11.hubspot.com'
+    config.hubspot_site         = 'demohubapi.app6.hubspot.com'
     
     # The access token for authenticating to several Hubspot services, e.g. 'demooooo-oooo-oooo-oooo-oooooooooooo'
     config.hubspot_access_token = nil
